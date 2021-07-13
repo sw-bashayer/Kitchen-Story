@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   food_list = [
-    [{ "id": 1, "name": "Potato", image: "1.jpg" }, { "id": 2, "name": "Pasta", image: "2.jpg" }, { "id": 3, "name": "Rice", image: "3.jpg" }],
-    [{ "id": 4, "name": "c", image: "4.jpg" }, { "id": 5, "name": "d", image: "5.jpg" }, { "id": 6, "name": "e", image: "6.jpg" }],
-    [{ "id": 7, "name": "f", image: "7.jpg" }, { "id": 8, "name": "g", image: "8.jpg" }, { "id": 9, "name": "m", image: "9.jpg" }]
+    [{ "id": 1, "name": "Potato", image: "Potato.jpg" }, { "id": 2, "name": "Pasta", image: "Pasta.jpg" }, { "id": 3, "name": "Rice", image: "Rice.jpg" }],
+    [{ "id": 4, "name": "Chicken", image: "Chicken.jpg" }, { "id": 5, "name": "Apple", image: "Apple.jpg" }, { "id": 6, "name": "Fish", image: "Fish.jpg" }],
+    [{ "id": 7, "name": "Eggs", image: "Eggs.jpg" }, { "id": 8, "name": "Cheeses", image: "Cheeses.jpg" }, { "id": 9, "name": "Popcorn", image: "Popcorn.jpg" }]
   ]
+  searchTerm = "";
+  /*
   foods_list = [
     {
       id: 1,
@@ -38,7 +40,7 @@ export class HomeComponent implements OnInit {
       image: "3.jpg",
     },
 
-  ]
+  ]*/
 
   constructor() { }
 

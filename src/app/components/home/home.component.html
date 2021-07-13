@@ -1,7 +1,21 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container">
+        <div class="d-flex mx-auto">
+            <div class="mb-3 row">
+                <label for="search" class="col-sm-2 col-form-label">Search</label>
+                <div class="col-sm-10">
+                    <input id="search" class="col-sm-10 form-control me-2" type="text" placeholder="Search for food item" [(ngModel)]="searchTerm"
+                        aria-label="Search">
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<h3>{{searchTerm}}</h3>
 <div class="container pt-3">
     <div class="card-group" *ngFor="let rowData of food_list">
         <div class="card" *ngFor="let food of rowData" style="width: 18rem;">
-            <img src="../images/kiwi-food.png" class="card-img-top" alt="...">
+            <img src="assets/images/{{food.image}}" class="card-img-top" alt="{food.name}}">
             <div class="card-body">
                 <h5 class="card-title">{{food.name}}</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -9,6 +23,4 @@
             </div>
         </div>
     </div>
-
-
 </div>
