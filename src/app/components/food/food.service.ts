@@ -17,4 +17,8 @@ export class FoodService {
   getFoods(): IFood[] {
     return this.foods;
   }
+
+  getFood(idNum: Number): IFood | undefined {
+    return this.foods.find(food => food.id == idNum);
+  }
 }

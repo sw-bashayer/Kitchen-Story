@@ -1,3 +1,4 @@
+import { CartService } from './../cart/cart-service/cart.service';
 import { FoodService } from './../food/food.service';
 import { IFood } from './IFood';
 import { Component, OnInit } from '@angular/core';
@@ -22,7 +23,7 @@ export class HomeComponent implements OnInit {
     this.searchedItems = this.searchTerm ? this.performSearch(this.searchTerm) : this.food_list;
   }
 
-  constructor(private foodservice: FoodService) { }
+  constructor(private foodservice: FoodService, private cartservice: CartService) { }
 
   ngOnInit(): void {
     this.food_list = this.foodservice.getFoods();
@@ -32,5 +33,10 @@ export class HomeComponent implements OnInit {
   performSearch(searchBy: string): IFood[] {
     searchBy = searchBy.toLocaleLowerCase();
     return this.food_list.filter((food: IFood) => food.name.toLocaleLowerCase().indexOf(searchBy) !== -1);
+  }
+
+  addToCart(item: IFood) {
+    this.cartservice.addToCart(item);
+    console.log(item);
   }
 }

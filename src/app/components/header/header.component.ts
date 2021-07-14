@@ -1,3 +1,4 @@
+import { CartService } from './../cart/cart-service/cart.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  private cartTotal: number = 0;
+  constructor(private cartservice: CartService) { }
 
   ngOnInit(): void {
+  }
+
+  getNumOfCartItem(): number {
+    return this.cartservice.getNumOfCartItem();
+
   }
 
 }
