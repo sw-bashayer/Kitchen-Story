@@ -1,35 +1,39 @@
 <div class="container w-50">
-    <div *ngIf="cartItems.length==0" class="alert alert-info">Your cart is empty</div>
-    <table *ngIf="cartItems.length>0" class="table mt-5">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Food</th>
-                <th scope="col">Price</th>
-                <th scope="col">Action</th>
+    <div *ngIf="cartItems.length==0" class="alert alert-info mt-5">Your cart is empty</div>
+    <div *ngIf="cartItems.length>0">
+        <table class="table mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Food</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Action</th>
 
-            </tr>
-        </thead>
-        <tbody>
-            <ng-container *ngFor="let item of cartItems">
-
-                <tr *ngIf="item != undefined">
-                    <th scope="row">{{item.id}}</th>
-                    <td>{{item.name}}</td>
-                    <td>{{item.price}}</td>
-                    <td>
-                        <button type="button" (click)="deleteFromCart(item)" class="btn btn-outline-dark">delete</button>
-                    </td>
                 </tr>
-            </ng-container>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="2">Total</td>
-                <td>{{cartTotal}}</td>
-            </tr>
-        </tfoot>
-    </table>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let item of cartItems">
+
+                    <tr *ngIf="item != undefined">
+                        <th scope="row">{{item.id}}</th>
+                        <td>{{item.name}}</td>
+                        <td>{{item.price}}</td>
+                        <td>
+                            <button type="button" (click)="deleteFromCart(item)" class="btn btn-outline-dark">delete</button>
+                        </td>
+                    </tr>
+                </ng-container>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">Total</td>
+                    <td>{{cartTotal}}</td>
+                </tr>
+            </tfoot>
+        </table>
+        <button type="button" class="btn btn-primary position-relative" routerLink="/payment">proceed to checkout</button>
+    </div>
+
 </div>
 
 <!--*ngIf='food_list&&food_list.length' -->

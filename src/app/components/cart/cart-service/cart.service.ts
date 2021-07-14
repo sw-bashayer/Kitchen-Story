@@ -36,5 +36,8 @@ export class CartService {
   getNumOfCartItem(): number {
     return this.cartItems.length;
   }
+  deleteAllItems() {
+    this.cartItems = [];
+  }
 }
 
