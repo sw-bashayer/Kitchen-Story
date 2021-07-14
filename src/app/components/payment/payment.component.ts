@@ -32,7 +32,6 @@ export class PaymentComponent implements OnInit {
     this.cartList = this.cartservice.getCartItems();
     this.totalPrice = this.cartservice.getCartTotal();
     this.customerservice.addOrder({ name: this.Name, address: this.Address, totalprice: this.totalPrice, paymentType: this.Payment, orderlist: this.cartList });
-    console.log(this.customerservice.getOrders());
     this.alert = true;
     this.cartservice.deleteAllItems();
   }

@@ -37,6 +37,5 @@ export class HomeComponent implements OnInit {
 
   addToCart(item: IFood) {
     this.cartservice.addToCart(item);
-    console.log(item);
   }
 }
